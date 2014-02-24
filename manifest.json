@@ -1,0 +1,16 @@
+{
+	"background": {
+		"scripts": [ "proxy.js" ]
+	},
+	"icons": {
+		"128": "icon-128.png"
+	},
+	"manifest_version": 2,
+	"name": "dotbit.me .bit web proxy",
+	"permissions": [ "proxy", "webRequest", "webRequestBlocking", "*://*/*" ],
+	"version": "0.1",
+	"description" : "An extention that enables surfing .bit sites",
+	"homepage_url": "https://dotbit.me/proxy/",
+	"update_url"  : "https://dotbit.me/proxy/update.xml"
+
+}
