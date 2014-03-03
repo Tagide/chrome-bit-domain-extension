@@ -10,7 +10,7 @@
 	"short_name": ".bit web surfer",
 	"permissions": [ "proxy", "webRequest", "webRequestBlocking", "*://*/*" ],
 	"version": "0.1",
-	"description" : "An extention that enables surfing .bit sites",
+	"description" : "An extension that enables surfing .bit sites",
 	"homepage_url": "https://dotbit.me/proxy/"
 
 }
