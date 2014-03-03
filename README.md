@@ -1,5 +1,5 @@
-Chrome extension for accessing the .bit TLD
-===========================================
+Chrome extension for surfing .bit sites
+=======================================
 
 This extension was created to make it as easy as possible for people to surf .bit domains. Download the extension from the Chrome Web Store:
 https://chrome.google.com/webstore/detail/dotbitme-bit-web-surfer/kkjfoinnbmgmjgmiakbbhggdmccbjhga
