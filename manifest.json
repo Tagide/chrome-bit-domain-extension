@@ -10,7 +10,6 @@
 	"permissions": [ "proxy", "webRequest", "webRequestBlocking", "*://*/*" ],
 	"version": "0.1",
 	"description" : "An extention that enables surfing .bit sites",
-	"homepage_url": "https://dotbit.me/proxy/",
-	"update_url"  : "https://dotbit.me/proxy/update.xml"
+	"homepage_url": "https://dotbit.me/proxy/"
 
 }
