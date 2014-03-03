@@ -7,7 +7,7 @@ chrome.webRequest.onBeforeRequest.addListener(function (details) {
     } else {
       // alert('Getting request for '+details.url);
       var xhr = new XMLHttpRequest();
-      var url = "http://app.dotbit.me/"+parser.hostname.replace(".bit", "");
+      var url = "http://app.dotbit.me/"+parser.hostname;
       xhr.open("GET", url, false);
       xhr.onreadystatechange = function() {
       if (xhr.readyState == 4) {
