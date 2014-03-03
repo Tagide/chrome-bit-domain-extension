@@ -6,7 +6,8 @@
 		"128": "icon-128.png"
 	},
 	"manifest_version": 2,
-	"name": "dotbit.me .bit web proxy",
+	"name": "dotbit.me .bit web surfer",
+	"short_name": ".bit web surfer",
 	"permissions": [ "proxy", "webRequest", "webRequestBlocking", "*://*/*" ],
 	"version": "0.1",
 	"description" : "An extention that enables surfing .bit sites",
