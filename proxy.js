@@ -12,7 +12,7 @@ chrome.webRequest.onBeforeRequest.addListener(function (details) {
       xhr.onreadystatechange = function() {
       if (xhr.readyState == 4) {
 	var bitip = xhr.responseText;
-	console.log('IP: '+bitip+' and server url '+url);
+	// console.log('IP: '+bitip+' and server url '+url);
 	var config = {
           mode: "pac_script",
           pacScript: {
@@ -23,7 +23,7 @@ chrome.webRequest.onBeforeRequest.addListener(function (details) {
                 "}"
           }
         };
-	console.log('Config is: '+JSON.stringify(config));
+	// console.log('Config is: '+JSON.stringify(config));
 	chrome.proxy.settings.set({value: config, scope: 'regular'},function() {});
         }
       }
