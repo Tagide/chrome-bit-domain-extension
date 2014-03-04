@@ -10,21 +10,23 @@ chrome.webRequest.onBeforeRequest.addListener(function (details) {
       var url = "http://app.dotbit.me/"+parser.hostname;
       
       if (parser.protocol == "https:") {
-	var port = "443";    	
+	var port = "443";
+	var access = "HTTPS";
       } else {
       	var port = "80";
+      	var access = "PROXY";
       }
       xhr.open("GET", url, false);
       xhr.onreadystatechange = function() {
       if (xhr.readyState == 4) {
 	var bitip = xhr.responseText;
-	console.log('IP: '+bitip+', port '+port+' and server url '+url);
+	console.log('Access via '+access+' IP: '+bitip+', port '+port+' and server url '+url);
 	var config = {
           mode: "pac_script",
           pacScript: {
           data: "function FindProxyForURL(url, host) {\n" +
                 "  if (dnsDomainIs(host, '"+parser.hostname+"'))\n" +
-                "    return 'PROXY "+bitip+":"+port+"';\n" +
+                "    return '"+access+" "+bitip+":"+port+"';\n" +
                 "  return 'DIRECT';\n" +
                 "}"
           }
