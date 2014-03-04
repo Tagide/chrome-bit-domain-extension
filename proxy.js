@@ -8,6 +8,12 @@ chrome.webRequest.onBeforeRequest.addListener(function (details) {
       // alert('Getting request for '+details.url);
       var xhr = new XMLHttpRequest();
       var url = "http://app.dotbit.me/"+parser.hostname;
+      
+      if (parser.protocol == "https:") {
+	var port = "443";    	
+      } else {
+      	var port = "80";
+      }
       xhr.open("GET", url, false);
       xhr.onreadystatechange = function() {
       if (xhr.readyState == 4) {
@@ -18,7 +24,7 @@ chrome.webRequest.onBeforeRequest.addListener(function (details) {
           pacScript: {
           data: "function FindProxyForURL(url, host) {\n" +
                 "  if (dnsDomainIs(host, '"+parser.hostname+"'))\n" +
-                "    return 'PROXY "+bitip+":80';\n" +
+                "    return 'PROXY "+bitip+":"+port+"';\n" +
                 "  return 'DIRECT';\n" +
                 "}"
           }
