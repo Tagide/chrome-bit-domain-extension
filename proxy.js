@@ -18,7 +18,7 @@ chrome.webRequest.onBeforeRequest.addListener(function (details) {
       xhr.onreadystatechange = function() {
       if (xhr.readyState == 4) {
 	var bitip = xhr.responseText;
-	// console.log('IP: '+bitip+' and server url '+url);
+	console.log('IP: '+bitip+', port '+port+' and server url '+url);
 	var config = {
           mode: "pac_script",
           pacScript: {
