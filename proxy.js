@@ -31,7 +31,7 @@ chrome.webRequest.onBeforeRequest.addListener(function (details) {
                 "}"
           }
         };
-	// console.log('Config is: '+JSON.stringify(config));
+	console.log('Config is: '+JSON.stringify(config));
 	chrome.proxy.settings.set({value: config, scope: 'regular'},function() {});
         }
       }
