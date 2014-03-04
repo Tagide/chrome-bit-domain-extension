@@ -36,5 +36,5 @@ chrome.webRequest.onBeforeRequest.addListener(function (details) {
       xhr.send();
    }
 }, {
-    urls: ['http://*/*']
+    urls: ['*://*/*']
 }, ['blocking']);
