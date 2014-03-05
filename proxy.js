@@ -7,7 +7,7 @@ chrome.webRequest.onBeforeRequest.addListener(function (details) {
     } else {
       // alert('Getting request for '+details.url);
       var xhr = new XMLHttpRequest();
-      var url = "http://app.dotbit.me/"+parser.hostname;
+      var url = "https://dotbit.me/a/"+parser.hostname;
       
       if (parser.protocol == "https:") {
 	var port = "443";
