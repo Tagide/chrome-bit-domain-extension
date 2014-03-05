@@ -31,8 +31,14 @@ chrome.webRequest.onBeforeRequest.addListener(function (details) {
                 "}"
           }
         };
-	console.log('Config is: '+JSON.stringify(config));
-	chrome.proxy.settings.set({value: config, scope: 'regular'},function() {});
+	chrome.proxy.settings.get({'incognito': false},function(oldconfig) {
+		if (config == oldconfig) {
+			console.log('Config is unchanged');
+		} else {
+			chrome.proxy.settings.set({value: config, scope: 'regular'},function() {});
+			console.log('Config is changed: '+JSON.stringify(config));
+		}
+	});
         }
       }
       xhr.send();
