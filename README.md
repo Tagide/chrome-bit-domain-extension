@@ -1,9 +1,7 @@
 Chrome extension for surfing .bit sites
 =======================================
 
-This extension was created to make it as easy as possible for people to surf .bit domains. Download the extension from the Chrome Web Store:
-
-https://chrome.google.com/webstore/detail/dotbitme-bit-web-surfer/kkjfoinnbmgmjgmiakbbhggdmccbjhga
+This extension was created to make it as easy as possible for people to surf .bit domains. Download the extension from the [Chrome Web Store](https://chrome.google.com/webstore/detail/dotbitme-bit-web-surfer/kkjfoinnbmgmjgmiakbbhggdmccbjhga).
 
 Bit domains are managed by the peer-to-peer Namecoin network with no central authority. The system is still at an early stage of development but grows rapidly. The authoritative source for .bit domains is the Namecoin block chain. This means normal DNS servers can currently not be used and surfing .bit domains remains difficult.
 
