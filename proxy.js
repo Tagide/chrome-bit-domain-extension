@@ -1,6 +1,6 @@
 function sleep(milliseconds, bithost) {
-	// synchronous XMLHttpRequests from Chrome extensions are hidden from blocking event handlers in order to prevent deadlocks.
-	// That's why we use this pretty little sleep function to try to get the IP of a .bit domain before the request times out.
+	// synchronous XMLHttpRequests from Chrome extensions are not blocking event handlers. That's why we use this
+	// pretty little sleep function to try to get the IP of a .bit domain before the request times out.
 	var start = new Date().getTime();
 	for (var i = 0; i < 1e7; i++) {
 		if (((new Date().getTime() - start) > milliseconds) || (sessionStorage.getItem(bithost) != null)){
@@ -27,7 +27,8 @@ chrome.webRequest.onBeforeRequest.addListener(function (details) {
 			// This .bit domain is not in cache, get the IP from dotbit.me
 			var xhr = new XMLHttpRequest();
 			var url = "https://dotbit.me/a/"+bithost;
-			// synchronous XMLHttpRequest is actually asynchronous https://developer.chrome.com/extensions/webRequest
+			// synchronous XMLHttpRequest is actually asynchronous
+			// check out https://developer.chrome.com/extensions/webRequest
 			xhr.open("GET", url, false);
 			xhr.onreadystatechange = function() {
 				if (xhr.readyState == 4) {
