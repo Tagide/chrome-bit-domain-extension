@@ -46,6 +46,7 @@ chrome.webRequest.onBeforeRequest.addListener(function (details) {
 		sleep(2000, bithost);
 	};
 	
+	// Get the IP from the session storage.
 	var bitip = sessionStorage.getItem(bithost);
 	var config = {
 		mode: "pac_script",
@@ -58,9 +59,7 @@ chrome.webRequest.onBeforeRequest.addListener(function (details) {
 		};
 	};
 	
-	chrome.proxy.settings.get({'incognito': false}, function(oldconfig) {
-		chrome.proxy.settings.set({value: config, scope: 'regular'},function() {});
-		console.log('IP '+bitip+' for '+bithost+' found, config is changed: '+JSON.stringify(config));
-	});
+	chrome.proxy.settings.set({value: config, scope: 'regular'},function() {});
+	console.log('IP '+bitip+' for '+bithost+' found, config is changed: '+JSON.stringify(config));
 	
 }, { urls: ["<all_urls>"] }, ["blocking"]);
