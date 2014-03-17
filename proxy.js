@@ -56,7 +56,7 @@ chrome.webRequest.onBeforeRequest.addListener(function (details) {
 			"    return '"+access+" "+bitip+":"+port+"';\n" +
 			"  return 'DIRECT';\n" +
 			"}"
-		};
+		}
 	};
 	
 	chrome.proxy.settings.set({value: config, scope: 'regular'},function() {});
